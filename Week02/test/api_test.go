@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"github.com/zepeng-jiang/Go-000/Week02/internal/pkg/handler"
+	"github.com/zepeng-jiang/Go-000/Week02/pkg/handler"
 	"io/ioutil"
 	"net/http"
 	"testing"

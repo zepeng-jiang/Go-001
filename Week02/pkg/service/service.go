@@ -2,9 +2,9 @@ package service
 
 import (
 	"github.com/pkg/errors"
-	"github.com/zepeng-jiang/Go-000/Week02/internal/pkg/biz"
-	"github.com/zepeng-jiang/Go-000/Week02/internal/pkg/mock_db"
-	"github.com/zepeng-jiang/Go-000/Week02/internal/pkg/model"
+	"github.com/zepeng-jiang/Go-000/Week02/pkg/biz"
+	"github.com/zepeng-jiang/Go-000/Week02/pkg/mock_db"
+	"github.com/zepeng-jiang/Go-000/Week02/pkg/model"
 )
 
 // Service

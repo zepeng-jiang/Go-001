@@ -1,9 +1,9 @@
 package biz
 
 import (
-	"github.com/zepeng-jiang/Go-000/Week02/internal/pkg/mock_db"
-	"github.com/zepeng-jiang/Go-000/Week02/internal/pkg/dao"
-	"github.com/zepeng-jiang/Go-000/Week02/internal/pkg/model"
+	"github.com/zepeng-jiang/Go-000/Week02/pkg/dao"
+	"github.com/zepeng-jiang/Go-000/Week02/pkg/mock_db"
+	"github.com/zepeng-jiang/Go-000/Week02/pkg/model"
 )
 
 // CreateUser 创建用户

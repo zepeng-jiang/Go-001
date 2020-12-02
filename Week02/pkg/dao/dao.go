@@ -2,8 +2,8 @@ package dao
 
 import (
 	"github.com/pkg/errors"
-	"github.com/zepeng-jiang/Go-000/Week02/internal/pkg/mock_db"
-	"github.com/zepeng-jiang/Go-000/Week02/internal/pkg/model"
+	"github.com/zepeng-jiang/Go-000/Week02/pkg/mock_db"
+	"github.com/zepeng-jiang/Go-000/Week02/pkg/model"
 )
 
 // FindUserByID 通过 id 从数据库中查找用户

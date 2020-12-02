@@ -2,7 +2,7 @@ package mock_db
 
 import (
 	"database/sql"
-	"github.com/zepeng-jiang/Go-000/Week02/internal/pkg/model"
+	"github.com/zepeng-jiang/Go-000/Week02/pkg/model"
 )
 
 // MockDB mock数据库

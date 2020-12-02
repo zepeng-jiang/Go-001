@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/zepeng-jiang/Go-000/Week02/internal/pkg/handler"
+	"github.com/zepeng-jiang/Go-000/Week02/pkg/handler"
 	"net/http"
 )
 
