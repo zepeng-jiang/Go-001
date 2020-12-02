@@ -12,14 +12,18 @@ import (
 
 // 运行本测试文件，需要将程序启动
 
+var (
+	url    = "http://127.0.0.1:8080/user"
+	method = "POST"
+)
+
 func TestCreateUserHandlerBadPath(t *testing.T) {
 	req := &handler.CreateUserRequest{
 		ID:       996,
 		Name:     "程序员",
 		Password: "password",
 	}
-	url := "http://127.0.0.1:8080/user"
-	method := "POST"
+
 	result := SendAndAccept(req, method, url)
 	if result.Code == 9999 {
 		t.Log("满足预期情况")
@@ -34,8 +38,6 @@ func TestCreateUserHandlerHappyPath(t *testing.T) {
 		Name:     "靓仔",
 		Password: "password",
 	}
-	url := "http://127.0.0.1:8080/user"
-	method := "POST"
 	result := SendAndAccept(req, method, url)
 	if result.Code == 200 {
 		t.Log("满足预期情况")
@@ -50,8 +52,7 @@ func TestCreateUserHandlerSadPath(t *testing.T) {
 		Name:     "路人甲",
 		Password: "password",
 	}
-	url := "http://127.0.0.1:8080/user"
-	method := "POST"
+
 	result := SendAndAccept(req, method, url)
 	if result.Code == 400 {
 		t.Log("满足预期情况")

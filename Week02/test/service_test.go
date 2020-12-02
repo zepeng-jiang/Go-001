@@ -4,13 +4,13 @@ import (
 	"database/sql"
 	"fmt"
 	"github.com/pkg/errors"
-	"github.com/zepeng-jiang/Go-000/Week02/internal/pkg/DB"
+	"github.com/zepeng-jiang/Go-000/Week02/internal/pkg/mock_db"
 	"github.com/zepeng-jiang/Go-000/Week02/internal/pkg/model"
 	"github.com/zepeng-jiang/Go-000/Week02/internal/pkg/service"
 	"testing"
 )
 
-var db *DB.MockDB
+var db *mock_db.MockDB
 var UserAlreadyExistsErr = sql.ErrNoRows
 
 func TestCreateUserServiceWithBadPath(t *testing.T) {

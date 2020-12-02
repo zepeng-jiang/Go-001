@@ -5,15 +5,15 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/pkg/errors"
-	"github.com/zepeng-jiang/Go-000/Week02/internal/pkg/DB"
+	"github.com/zepeng-jiang/Go-000/Week02/internal/pkg/mock_db"
 	"github.com/zepeng-jiang/Go-000/Week02/internal/pkg/model"
 	"github.com/zepeng-jiang/Go-000/Week02/internal/pkg/service"
 	"net/http"
 )
 
-var db *DB.MockDB
+var db *mock_db.MockDB
 var UserAlreadyExistsErr = sql.ErrNoRows
-var ParamterErr = errors.New("user id must be greater than zero")
+var RequestParameterErr = errors.New("user id must be greater than zero")
 
 // CreateUserRequest 创建用户请求
 type CreateUserRequest struct {
@@ -46,7 +46,7 @@ func generateResponse(err error, w http.ResponseWriter) {
 		encodeResponse(9999, "user already exists, can not create", w)
 		return
 	}
-	if err != nil && errors.Cause(err).Error() == ParamterErr.Error() {
+	if err != nil && errors.Cause(err).Error() == RequestParameterErr.Error() {
 		encodeResponse(400, errors.Cause(err).Error(), w)
 		return
 	}
