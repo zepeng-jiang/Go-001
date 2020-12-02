@@ -41,19 +41,20 @@ func CreateUserHandler(w http.ResponseWriter, r *http.Request) {
 
 // generateResponse 生成响应
 func generateResponse(err error, w http.ResponseWriter) {
-	if err != nil && errors.Cause(err) == UserAlreadyExistsErr {
-		fmt.Printf("[handler] user error: %+v \n", err)
-		encodeResponse(9999, "user already exists, can not create", w)
-		return
-	}
-	if err != nil && errors.Cause(err).Error() == RequestParameterErr.Error() {
-		encodeResponse(400, errors.Cause(err).Error(), w)
-		return
-	}
-	if err != nil && err != UserAlreadyExistsErr {
-		fmt.Printf("[handler] user error: %+v \n", err)
-		encodeResponse(500, "Internal Server Error", w)
-		return
+	if err != nil {
+		if errors.Is(err, UserAlreadyExistsErr) {
+			fmt.Printf("[handler] user error: %+v \n", err)
+			encodeResponse(9999, "user already exists, can not create", w)
+			return
+		} else if errors.Cause(err).Error() == RequestParameterErr.Error() {
+			fmt.Printf("[handler] user error: %+v \n", err)
+			encodeResponse(400, errors.Cause(err).Error(), w)
+			return
+		} else {
+			fmt.Printf("[handler] user error: %+v \n", err)
+			encodeResponse(500, "Internal Server Error", w)
+			return
+		}
 	}
 	encodeResponse(200, "create user success", w)
 }

@@ -2,6 +2,7 @@ package mock_db
 
 import (
 	"database/sql"
+	"errors"
 	"github.com/zepeng-jiang/Go-000/Week02/pkg/model"
 )
 
@@ -13,7 +14,7 @@ func (db *MockDB) Save(user *model.User) error {
 	if nil != user {
 		return nil
 	}
-	return sql.ErrNoRows
+	return errors.New("database save record failed")
 }
 
 // FindByID 查询
